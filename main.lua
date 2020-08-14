@@ -65,11 +65,16 @@ function love.update(dt)
     player2_y = math.min(VIRTUAL_HEIGHT-20,player2_y + PADDLE_SPEED * dt)
   end
 
+
   if gameState == 'play' then
     ball_x = ball_x + ball_dx * dt
     ball_y = ball_y + ball_dx * dt
   end
 
+end
+
+function helloWorld()
+  hello = 0
 end
 
 
@@ -108,8 +113,8 @@ function love.draw()
   end
 
   love.graphics.setFont(score_font)
-  love.graphics.print(tostring(player1_score),VIRTUAL_WIDTH/2-50,VIRTUAL_HEIGHT/3)
-  love.graphics.print(tostring(player2_score),VIRTUAL_WIDTH/2+50,VIRTUAL_HEIGHT/3)
+  love.graphics.print(tostring(player1_score),VIRTUAL_WIDTH/2 - 50,VIRTUAL_HEIGHT/3)
+  love.graphics.print(tostring(player2_score),VIRTUAL_WIDTH/2 + 50,VIRTUAL_HEIGHT/3)
 
   -- First Paddle
   love.graphics.rectangle('fill',10,player1_y,5,20)
