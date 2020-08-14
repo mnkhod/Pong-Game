@@ -9,6 +9,7 @@
 love.draw	main.lua	/^function love.draw()$/;"	f
 love.keypressed	main.lua	/^function love.keypressed(key)$/;"	f
 love.load	main.lua	/^function love.load()$/;"	f
+love.update	main.lua	/^function love.update(dt)$/;"	f
 push:addCanvas	push.lua	/^function push:addCanvas(params)$/;"	f
 push:apply	push.lua	/^function push:apply(operation, shader)$/;"	f
 push:applySettings	push.lua	/^function push:applySettings(settings)$/;"	f
