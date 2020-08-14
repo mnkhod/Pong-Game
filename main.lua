@@ -102,7 +102,25 @@ function love.update(dt)
 
     ball:update(dt)
   end
+
+  -- Check if ball has gone over the wall or not , SCORE SYSTEM
   
+  if ball.x < 0 then
+    serving_player = 1
+    player2_score = player2_score + 1
+    ball:reset()
+    gameState = 'start'
+  end
+
+  if ball.x > VIRTUAL_WIDTH then
+    serving_player = 2
+    player1_score = player1_score + 1
+    ball:reset()
+    gameState = 'start'
+  end
+
+
+
   -- Player 1 Movement
   if love.keyboard.isDown('w') then
     -- add negative paddle speed , scaled by deltaTime #Up
