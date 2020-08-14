@@ -7,13 +7,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +192 main.lua
+badd +140 main.lua
 badd +10 push.lua
 badd +25 class.lua
 badd +18 Ball.lua
 badd +19 Paddle.lua
 badd +3 .gitignore
-badd +0 term://.//1681814:zsh
+badd +10 term://.//1681814:zsh
+badd +0 term://.//1688562:zsh
 argglobal
 %argdel
 $argadd main.lua
@@ -57,44 +58,42 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-42,44fold
-26,58fold
-77,77fold
-79,80fold
-82,82fold
-87,87fold
-89,89fold
-91,91fold
-96,96fold
-76,100fold
-108,108fold
-111,111fold
-143,143fold
-110,147fold
-107,148fold
-162,162fold
-164,164fold
-156,187fold
-204,206fold
+48,50fold
+26,64fold
+85,85fold
+87,88fold
+90,90fold
+97,97fold
+99,99fold
+101,101fold
+106,106fold
+82,112fold
+122,122fold
+126,126fold
+161,161fold
+124,165fold
+121,166fold
+180,180fold
+182,182fold
+174,205fold
+222,224fold
 26
 normal! zo
-76
+82
 normal! zo
-107
+121
 normal! zo
-110
+124
 normal! zo
-156
-normal! zo
-let s:l = 18 - ((8 * winheight(0) + 10) / 20)
+let s:l = 156 - ((10 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
+156
+normal! 07|
 wincmd w
 argglobal
-if bufexists("term://.//1681814:zsh") | buffer term://.//1681814:zsh | else | edit term://.//1681814:zsh | endif
+if bufexists("term://.//1688562:zsh") | buffer term://.//1688562:zsh | else | edit term://.//1688562:zsh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
