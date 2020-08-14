@@ -7,4 +7,5 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
 love.draw	main.lua	/^function love.draw()$/;"	f
+love.keypressed	main.lua	/^function love.keypressed(key)$/;"	f
 love.load	main.lua	/^function love.load()$/;"	f
