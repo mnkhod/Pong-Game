@@ -44,6 +44,8 @@ function love.load()
   player1_score = 0
   player2_score = 0
 
+  serving_player = 1
+
   gameState = 'start'
 
 
@@ -59,8 +61,15 @@ end
 
 function love.update(dt)
 
+  if gameState == 'serve' then
+    ball.dy = math.random(-50,50)
 
-  if gameState == 'play' then
+    if serving_player == 1 then
+      ball.dx = math.random(140,200)
+    else
+      ball.dx = -math.random(140,200)
+    end
+  elseif gameState == 'play' then
 
 
     if ball:collide(player1) then
@@ -109,14 +118,14 @@ function love.update(dt)
     serving_player = 1
     player2_score = player2_score + 1
     ball:reset()
-    gameState = 'start'
+    gameState = 'serve'
   end
 
   if ball.x > VIRTUAL_WIDTH then
     serving_player = 2
     player1_score = player1_score + 1
     ball:reset()
-    gameState = 'start'
+    gameState = 'serve'
   end
 
 
@@ -156,11 +165,9 @@ function love.keypressed(key)
     love.event.quit()
   elseif key == 'enter' or key == 'return' then
     if gameState == 'start' then
+      gameState = 'serve'
+    elseif gameState == 'serve' then
       gameState = 'play'
-    else
-      gameState = 'start'
-
-      ball:reset()
     end
   end
 
@@ -176,9 +183,13 @@ function love.draw()
 
   love.graphics.setFont(small_font)
   if gameState == 'start' then
-    love.graphics.printf('Start Game By Pressing Enter!',0,20,VIRTUAL_WIDTH,'center')
-  else
-    love.graphics.printf('Game Created By mnkhod!',0,20,VIRTUAL_WIDTH,'center')
+    love.graphics.printf('Start Game By Pressing Enter!',0,10,VIRTUAL_WIDTH,'center')
+    love.graphics.printf('developed by mnkhod',0,20,VIRTUAL_WIDTH,'center')
+  elseif gameState == 'serve' then
+    love.graphics.setFont(small_font)
+    love.graphics.printf('Player' .. tostring(serving_player) .. "'s serve!'",0,10,VIRTUAL_WIDTH,'center')
+    love.graphics.printf("Please Press Enter To Serve",0,20,VIRTUAL_WIDTH,'center')
+  elseif gameState == 'play' then
   end
 
   love.graphics.setFont(score_font)
