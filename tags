@@ -6,12 +6,25 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Ball:init	Ball.lua	/^function Ball:init(x,y,width,height)$/;"	f
+Ball:render	Ball.lua	/^function Ball:render()$/;"	f
+Ball:reset	Ball.lua	/^function Ball:reset()$/;"	f
+Ball:update	Ball.lua	/^function Ball:update(dt)$/;"	f
+Paddle:init	Paddle.lua	/^function Paddle:init(x,y,width,height)$/;"	f
+Paddle:render	Paddle.lua	/^function Paddle:render()$/;"	f
+Paddle:update	Paddle.lua	/^function Paddle:update(dt)$/;"	f
 SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
-helloWorld	main.lua	/^function helloWorld()$/;"	f
+class.init	class.lua	/^	class.init    = class.init    or class[1] or function() end$/;"	f
+clone	class.lua	/^local function clone(other)$/;"	f
+common.class	class.lua	/^	function common.class(name, prototype, parent)$/;"	f
+common.instance	class.lua	/^	function common.instance(class, ...)$/;"	f
+include	class.lua	/^local function include(class, other)$/;"	f
+include_helper	class.lua	/^local function include_helper(to, from, seen)$/;"	f
 love.draw	main.lua	/^function love.draw()$/;"	f
 love.keypressed	main.lua	/^function love.keypressed(key)$/;"	f
 love.load	main.lua	/^function love.load()$/;"	f
 love.update	main.lua	/^function love.update(dt)$/;"	f
+new	class.lua	/^local function new(class)$/;"	f
 push:addCanvas	push.lua	/^function push:addCanvas(params)$/;"	f
 push:apply	push.lua	/^function push:apply(operation, shader)$/;"	f
 push:applySettings	push.lua	/^function push:applySettings(settings)$/;"	f
@@ -40,3 +53,5 @@ s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0
 s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
 s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
 windowUpdateMode	push.lua	/^local windowUpdateMode = love11 and love.window.updateMode or function(width, height, settings)$/;"	f
+{__call	class.lua	/^	return setmetatable(class, {__call = function(c, ...)$/;"	f
+{__call	class.lua	/^	{__call = function(_,...) return new(...) end})$/;"	f

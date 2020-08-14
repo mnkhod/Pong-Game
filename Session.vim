@@ -7,13 +7,16 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +126 main.lua
-badd +5 push.lua
-badd +0 term://.//1646930:zsh
+badd +130 main.lua
+badd +10 push.lua
+badd +25 class.lua
+badd +27 Ball.lua
+badd +14 Paddle.lua
+badd +0 term://.//1658454:zsh
 argglobal
 %argdel
 $argadd main.lua
-edit main.lua
+edit Paddle.lua
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -24,32 +27,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 87 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 79 + 83) / 167)
 argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=2
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-26,28fold
-16,29fold
-83,83fold
-82,83fold
-104,128fold
-let s:l = 128 - ((24 * winheight(0) + 20) / 41)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-128
-normal! 0
-wincmd w
-argglobal
-if bufexists("push.lua") | buffer push.lua | else | edit push.lua | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,15 +39,38 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 20) / 41)
+let s:l = 14 - ((13 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
+14
+normal! 03|
+wincmd w
+argglobal
+if bufexists("main.lua") | buffer main.lua | else | edit main.lua | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=2
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+37,39fold
+27,40fold
+95,95fold
+94,95fold
+112,136fold
+let s:l = 138 - ((25 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+138
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
-exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
+exe 'vert 1resize ' . ((&columns * 87 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 79 + 83) / 167)
 tabnew
 set splitbelow splitright
 wincmd t
@@ -76,7 +79,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-if bufexists("term://.//1646930:zsh") | buffer term://.//1646930:zsh | else | edit term://.//1646930:zsh | endif
+if bufexists("term://.//1658454:zsh") | buffer term://.//1658454:zsh | else | edit term://.//1658454:zsh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
