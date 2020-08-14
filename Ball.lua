@@ -27,3 +27,23 @@ end
 function Ball:render()
   love.graphics.rectangle('fill',self.x,self.y,self.width,self.height)
 end
+
+
+-- Collision Detection , AABB method
+function Ball:collide(paddle)
+
+  -- Check if either obj left edge is farther to the right than the other right edge of obj
+
+  if self.x > paddle.x + paddle.width or paddle.x > self.x + self.width then
+    return false
+  end
+
+  -- Check if either obj bottom edge is higher than top edge of other
+
+  if self.y > paddle.y + paddle.height or paddle.y > self.y + self.height then
+    return false
+  end
+
+  return true
+
+end

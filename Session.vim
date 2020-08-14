@@ -7,18 +7,39 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +149 main.lua
+badd +98 main.lua
 badd +10 push.lua
 badd +25 class.lua
-badd +27 Ball.lua
+badd +46 Ball.lua
 badd +19 Paddle.lua
-badd +2 .gitignore
-badd +0 term://.//1661878:zsh
+badd +3 .gitignore
+badd +0 term://.//1668888:zsh
 argglobal
 %argdel
 $argadd main.lua
-edit main.lua
 set splitbelow splitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+enew
+file NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+tabedit Ball.lua
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
@@ -28,34 +49,12 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 1resize ' . ((&columns * 73 + 83) / 167)
 exe '2resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 2resize ' . ((&columns * 93 + 83) / 167)
+exe '3resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 3resize ' . ((&columns * 93 + 83) / 167)
 argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=2
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-39,41fold
-27,42fold
-94,94fold
-93,94fold
-111,135fold
-27
-normal! zo
-let s:l = 36 - ((10 * winheight(0) + 10) / 20)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-36
-normal! 0
-wincmd w
-argglobal
-if bufexists("term://.//1661878:zsh") | buffer term://.//1661878:zsh | else | edit term://.//1661878:zsh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -64,17 +63,74 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 3 - ((2 * winheight(0) + 10) / 20)
+silent! normal! zE
+let s:l = 46 - ((29 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 070|
+46
+normal! 0
 wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 20 + 22) / 45)
+argglobal
+if bufexists("main.lua") | buffer main.lua | else | edit main.lua | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=3
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+39,41fold
+24,53fold
+108,110fold
+112,113fold
+115,115fold
+120,120fold
+122,122fold
+124,124fold
+106,130fold
+138,138fold
+141,141fold
+143,145fold
+140,146fold
+137,147fold
+161,161fold
+163,163fold
+155,182fold
+188,190fold
+let s:l = 65 - ((4 * winheight(0) + 10) / 20)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+65
+normal! 0
+wincmd w
+argglobal
+if bufexists("term://.//1668888:zsh") | buffer term://.//1668888:zsh | else | edit term://.//1668888:zsh | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 10) / 20)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 73 + 83) / 167)
 exe '2resize ' . ((&lines * 20 + 22) / 45)
-tabnext 1
+exe 'vert 2resize ' . ((&columns * 93 + 83) / 167)
+exe '3resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 3resize ' . ((&columns * 93 + 83) / 167)
+tabnext 2
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

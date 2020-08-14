@@ -6,6 +6,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Ball:collide	Ball.lua	/^function Ball:collide(paddle)$/;"	f
 Ball:init	Ball.lua	/^function Ball:init(x,y,width,height)$/;"	f
 Ball:render	Ball.lua	/^function Ball:render()$/;"	f
 Ball:reset	Ball.lua	/^function Ball:reset()$/;"	f
@@ -47,9 +48,6 @@ push:start	push.lua	/^function push:start()$/;"	f
 push:switchFullscreen	push.lua	/^function push:switchFullscreen(winw, winh)$/;"	f
 push:toGame	push.lua	/^function push:toGame(x, y)$/;"	f
 push:toReal	push.lua	/^function push:toReal(x, y)$/;"	f
-s:l	Session.vim	/^let s:l = 3 - ((2 * winheight(0) + 10) \/ 20)$/;"	v
-s:l	Session.vim	/^let s:l = 68 - ((14 * winheight(0) + 20) \/ 41)$/;"	v
-s:l	Session.vim	/^let s:l = 8 - ((3 * winheight(0) + 10) \/ 20)$/;"	v
 s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
 s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
 s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v

@@ -58,6 +58,50 @@ end
 
 
 function love.update(dt)
+
+
+  if gameState == 'play' then
+
+
+    if ball:collide(player1) then
+      ball.dx = -ball.dx * 1.03
+      ball.x = player1.x + 5
+
+      if ball.dy < 0 then
+        ball.dy = -math.random(10,150)
+      else
+        ball.dy = math.random(10,150)
+      end
+
+    end
+
+    if ball:collide(player2) then
+      ball.dx = -ball.dx * 1.03
+      ball.x = player2.x - 4
+
+      if ball.dy < 0 then
+        ball.dy = -math.random(10,150)
+      else
+        ball.dy = math.random(10,150)
+      end
+
+    end
+
+
+    if ball.y <= 0 then
+      ball.y = 0
+      ball.dy = -ball.dy
+    end
+
+    -- -4 for the size of the ball
+    if ball.y >= VIRTUAL_HEIGHT - 4 then
+      ball.y = VIRTUAL_HEIGHT - 4
+      ball.dy = -ball.dy
+    end
+
+
+    ball:update(dt)
+  end
   
   -- Player 1 Movement
   if love.keyboard.isDown('w') then
@@ -81,9 +125,6 @@ function love.update(dt)
   end
 
 
-  if gameState == 'play' then
-    ball:update(dt)
-  end
 
   player1:update(dt)
   player2:update(dt)
