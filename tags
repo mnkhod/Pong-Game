@@ -9,3 +9,25 @@
 love.draw	main.lua	/^function love.draw()$/;"	f
 love.keypressed	main.lua	/^function love.keypressed(key)$/;"	f
 love.load	main.lua	/^function love.load()$/;"	f
+push:addCanvas	push.lua	/^function push:addCanvas(params)$/;"	f
+push:apply	push.lua	/^function push:apply(operation, shader)$/;"	f
+push:applySettings	push.lua	/^function push:applySettings(settings)$/;"	f
+push:applyShaders	push.lua	/^function push:applyShaders(canvas, shaders)$/;"	f
+push:finish	push.lua	/^function push:finish(shader)$/;"	f
+push:getCanvasTable	push.lua	/^function push:getCanvasTable(name)$/;"	f
+push:getDimensions	push.lua	/^function push:getDimensions() return self._WWIDTH, self._WHEIGHT end$/;"	f
+push:getHeight	push.lua	/^function push:getHeight() return self._WHEIGHT end$/;"	f
+push:getWidth	push.lua	/^function push:getWidth() return self._WWIDTH end$/;"	f
+push:initValues	push.lua	/^function push:initValues()$/;"	f
+push:resetSettings	push.lua	/^function push:resetSettings() return self:applySettings(self.defaults) end$/;"	f
+push:resize	push.lua	/^function push:resize(w, h)$/;"	f
+push:setBorderColor	push.lua	/^function push:setBorderColor(color, g, b)$/;"	f
+push:setCanvas	push.lua	/^function push:setCanvas(name)$/;"	f
+push:setShader	push.lua	/^function push:setShader(name, shader)$/;"	f
+push:setupCanvas	push.lua	/^function push:setupCanvas(canvases)$/;"	f
+push:setupScreen	push.lua	/^function push:setupScreen(WWIDTH, WHEIGHT, RWIDTH, RHEIGHT, settings)$/;"	f
+push:start	push.lua	/^function push:start()$/;"	f
+push:switchFullscreen	push.lua	/^function push:switchFullscreen(winw, winh)$/;"	f
+push:toGame	push.lua	/^function push:toGame(x, y)$/;"	f
+push:toReal	push.lua	/^function push:toReal(x, y)$/;"	f
+windowUpdateMode	push.lua	/^local windowUpdateMode = love11 and love.window.updateMode or function(width, height, settings)$/;"	f
