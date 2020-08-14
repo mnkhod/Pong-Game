@@ -13,7 +13,7 @@ badd +25 class.lua
 badd +18 Ball.lua
 badd +19 Paddle.lua
 badd +3 .gitignore
-badd +0 term://.//1676492:zsh
+badd +0 term://.//1681814:zsh
 argglobal
 %argdel
 $argadd main.lua
@@ -57,44 +57,44 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-39,41fold
-24,55fold
-73,75fold
-77,78fold
-80,80fold
-85,85fold
+42,44fold
+26,58fold
+77,77fold
+79,80fold
+82,82fold
 87,87fold
 89,89fold
-94,94fold
-72,98fold
-106,106fold
-109,109fold
-111,113fold
-108,132fold
-105,133fold
-147,147fold
-149,149fold
-141,168fold
-172,174fold
-24
+91,91fold
+96,96fold
+76,100fold
+108,108fold
+111,111fold
+143,143fold
+110,147fold
+107,148fold
+162,162fold
+164,164fold
+156,187fold
+204,206fold
+26
 normal! zo
-72
+76
 normal! zo
-105
+107
 normal! zo
-108
+110
 normal! zo
-141
+156
 normal! zo
-let s:l = 70 - ((9 * winheight(0) + 10) / 20)
+let s:l = 18 - ((8 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-70
+18
 normal! 0
 wincmd w
 argglobal
-if bufexists("term://.//1676492:zsh") | buffer term://.//1676492:zsh | else | edit term://.//1676492:zsh | endif
+if bufexists("term://.//1681814:zsh") | buffer term://.//1681814:zsh | else | edit term://.//1681814:zsh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
