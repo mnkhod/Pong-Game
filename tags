@@ -18,6 +18,7 @@ class.init	class.lua	/^	class.init    = class.init    or class[1] or function() 
 clone	class.lua	/^local function clone(other)$/;"	f
 common.class	class.lua	/^	function common.class(name, prototype, parent)$/;"	f
 common.instance	class.lua	/^	function common.instance(class, ...)$/;"	f
+displayFPS	main.lua	/^function displayFPS()$/;"	f
 include	class.lua	/^local function include(class, other)$/;"	f
 include_helper	class.lua	/^local function include_helper(to, from, seen)$/;"	f
 love.draw	main.lua	/^function love.draw()$/;"	f

@@ -23,7 +23,7 @@ function love.load()
 
   -- use current time to seed random
   math.randomseed(os.time())
-  
+
   -- nearest-neighbor filtering on upscaling and downscaling to prevent blurring of text and graphics
   love.graphics.setDefaultFilter('nearest','nearest')
 
@@ -31,6 +31,8 @@ function love.load()
   score_font = love.graphics.newFont('font.ttf',32)
 
   love.graphics.setFont(small_font)
+
+  love.window.setTitle("Pong")
 
 
   push:setupScreen(VIRTUAL_WIDTH,VIRTUAL_HEIGHT,WINDOW_WIDTH,WINDOW_HEIGHT,{
@@ -133,7 +135,17 @@ function love.draw()
   -- Render Ball
   ball:render()
 
+  -- Render FPS
+  displayFPS()
+
   push:apply('end')
 
+end
+
+
+function displayFPS()
+  love.graphics.setFont(small_font)
+  love.graphics.setColor(0,255,0,255)
+  love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()),10,10)
 end
 
